@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DNGCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXk-Z2-kfe">
+                                <rect key="frame" x="173.66666666666666" y="352.66666666666669" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="SituationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ICd-lJ-tXf"/>
+                                    <segue destination="TlD-2j-gjg" kind="showDetail" id="wqa-4p-etA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ситуация :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3F0-Ux-Ihj">
+                                <rect key="frame" x="132" y="165.66666666666666" width="150" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите количество игроков" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Quc-z0-BZ7">
+                                <rect key="frame" x="95.333333333333329" y="351" width="223.33333333333337" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eXk-Z2-kfe" firstAttribute="top" secondItem="3F0-Ux-Ihj" secondAttribute="bottom" constant="150" id="D7r-hq-AAA"/>
+                            <constraint firstItem="3F0-Ux-Ihj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PjD-Q7-kqu"/>
+                            <constraint firstItem="eXk-Z2-kfe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UeP-Av-f4k"/>
+                            <constraint firstItem="Quc-z0-BZ7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V0Q-59-3SY"/>
+                            <constraint firstItem="Quc-z0-BZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dGc-ny-KeJ"/>
+                            <constraint firstItem="eXk-Z2-kfe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gEd-CX-6rn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numberTextfield" destination="Quc-z0-BZ7" id="EY6-2c-Mrd"/>
+                        <outlet property="situationButtonOutlet" destination="eXk-Z2-kfe" id="OBo-CH-7iy"/>
+                        <outlet property="situationText" destination="eXk-Z2-kfe" id="O35-oi-4JV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+        <!--PlayerVC-->
+        <scene sceneID="FQ0-NN-oGv">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="TlD-2j-gjg" customClass="PlayerVC" customModule="DNGCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tn3-dL-xiy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зашел как-то биба и боба в кафе, а тааам жук волчок тратрата ааоллааф" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLE-q5-Xma">
+                                <rect key="frame" x="20" y="635.33333333333337" width="373.33333333333331" height="40.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="FfZ-Hq-yqL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" restorationIdentifier="player" image="rectangle.portrait.and.arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="drU-8B-88o">
+                                <rect key="frame" x="20" y="253.33333333333334" width="374" height="373.66666666666663"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="drU-8B-88o" secondAttribute="height" multiplier="1:1" id="med-pN-027"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uda-PO-rSV" appends="YES" id="UMd-4t-ha6"/>
+                                    <outletCollection property="gestureRecognizers" destination="JyI-ye-bsB" appends="YES" id="RO2-KY-N9S"/>
+                                    <outletCollection property="gestureRecognizers" destination="rjz-BN-PGT" appends="YES" id="919-nv-mTH"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d6n-BO-0e7"/>
+                        <color key="backgroundColor" red="0.58039224150000002" green="0.58039218189999997" blue="0.58039224150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="drU-8B-88o" firstAttribute="leading" secondItem="d6n-BO-0e7" secondAttribute="leading" constant="20" id="5AY-rg-1qT"/>
+                            <constraint firstItem="KLE-q5-Xma" firstAttribute="top" secondItem="drU-8B-88o" secondAttribute="bottom" constant="8.3300000000000001" id="B0t-KV-reu"/>
+                            <constraint firstItem="d6n-BO-0e7" firstAttribute="trailing" secondItem="drU-8B-88o" secondAttribute="trailing" constant="20" id="Va4-Hg-isR"/>
+                            <constraint firstItem="KLE-q5-Xma" firstAttribute="leading" secondItem="d6n-BO-0e7" secondAttribute="leading" constant="20" id="acU-BV-ekb"/>
+                            <constraint firstItem="d6n-BO-0e7" firstAttribute="bottom" secondItem="KLE-q5-Xma" secondAttribute="bottom" constant="60" id="cw3-hc-cTM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lq4-oD-f6x"/>
+                    <connections>
+                        <outlet property="player" destination="drU-8B-88o" id="Ien-2d-z6b"/>
+                        <outlet property="situationLabel" destination="KLE-q5-Xma" id="fUd-HZ-vKR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjl-LX-6Me" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="uda-PO-rSV">
+                    <connections>
+                        <action selector="didTapImageView:" destination="TlD-2j-gjg" id="7Z4-Uq-Mky"/>
+                        <segue destination="BIP-Vi-KOY" kind="showDetail" id="Bum-vI-jHz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="JyI-ye-bsB">
+                    <connections>
+                        <action selector="rigthSwipe:" destination="TlD-2j-gjg" id="Az0-Yf-qWa"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="rjz-BN-PGT">
+                    <connections>
+                        <action selector="leftSwipe:" destination="TlD-2j-gjg" id="hmY-av-lYk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="89.673913043478265"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="6gk-ge-dKu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Rf5-Bc-YxW" customClass="ResultsViewController" customModule="DNGCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pEY-B8-uRD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-sT-U6v">
+                                <rect key="frame" x="0.0" y="56" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yMC-03-w3o">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Cell" id="Ocn-3g-1ra" customClass="ImageCell" customModule="DNGCardGame" customModuleProvider="target">
+                                        <rect key="frame" x="104.66666666666667" y="0.0" width="205" height="177"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mzq-P1-Deb" customClass="AnswerCell" customModule="DNGCardGame" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="177"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Haj-9u-kEK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="205" height="177"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Haj-9u-kEK" secondAttribute="trailing" id="1K2-jQ-fwg"/>
+                                                <constraint firstItem="Haj-9u-kEK" firstAttribute="leading" secondItem="Mzq-P1-Deb" secondAttribute="leading" id="Qqb-a0-L10"/>
+                                                <constraint firstItem="Haj-9u-kEK" firstAttribute="top" secondItem="Mzq-P1-Deb" secondAttribute="top" id="RwJ-gs-CiR"/>
+                                                <constraint firstAttribute="bottom" secondItem="Haj-9u-kEK" secondAttribute="bottom" id="kQ4-st-1rE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="205" height="177"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="Haj-9u-kEK" id="lmx-fG-6yl"/>
+                                            <segue destination="xpC-81-Lhn" kind="show" identifier="fullSegue" id="gzq-Ki-xH7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rf5-Bc-YxW" id="l3v-iO-QBm"/>
+                                    <outlet property="delegate" destination="Rf5-Bc-YxW" id="J8A-Mw-vRs"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sRL-Cn-EpJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sRL-Cn-EpJ" firstAttribute="trailing" secondItem="ahI-sT-U6v" secondAttribute="trailing" id="D9d-AZ-1ae"/>
+                            <constraint firstItem="ahI-sT-U6v" firstAttribute="top" secondItem="sRL-Cn-EpJ" secondAttribute="top" id="ISY-Jh-Zoi"/>
+                            <constraint firstItem="sRL-Cn-EpJ" firstAttribute="bottom" secondItem="ahI-sT-U6v" secondAttribute="bottom" id="JmS-8t-lya"/>
+                            <constraint firstItem="ahI-sT-U6v" firstAttribute="leading" secondItem="sRL-Cn-EpJ" secondAttribute="leading" id="hR5-Z2-wKP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QRp-Wq-OGy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ahI-sT-U6v" id="Dtu-m2-Wp1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-Bk-osI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926.08695652173924" y="800.54347826086962"/>
+        </scene>
+        <!--Full ScreenVC-->
+        <scene sceneID="dJ1-zn-GsN">
+            <objects>
+                <viewController storyboardIdentifier="FullScreenVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xpC-81-Lhn" customClass="FullScreenVC" customModule="DNGCardGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jjq-Uu-jwF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WnE-wL-Rnj">
+                                <rect key="frame" x="0.0" y="56" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9DA-Fb-Slg">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FullScreenCell" id="oYW-wI-NXF" customClass="FullScreenCell" customModule="DNGCardGame" customModuleProvider="target">
+                                        <rect key="frame" x="104.66666666666667" y="0.0" width="205" height="177"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BGG-0T-RZf" customClass="AnswerCell" customModule="DNGCardGame" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="205" height="177"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="deD-aH-U8w">
+                                                    <rect key="frame" x="0.0" y="0.0" width="205" height="177"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="deD-aH-U8w" firstAttribute="leading" secondItem="BGG-0T-RZf" secondAttribute="leading" id="NEE-Yb-Afv"/>
+                                                <constraint firstAttribute="trailing" secondItem="deD-aH-U8w" secondAttribute="trailing" id="Nmw-jy-bor"/>
+                                                <constraint firstAttribute="bottom" secondItem="deD-aH-U8w" secondAttribute="bottom" id="RyG-kR-jl8"/>
+                                                <constraint firstItem="deD-aH-U8w" firstAttribute="top" secondItem="BGG-0T-RZf" secondAttribute="top" id="zgl-vl-M7M"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="205" height="177"/>
+                                        <connections>
+                                            <outlet property="pictureView" destination="deD-aH-U8w" id="qaT-CW-GUX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xpC-81-Lhn" id="uqH-0f-tgG"/>
+                                    <outlet property="delegate" destination="xpC-81-Lhn" id="vf4-Rd-Pbh"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tED-hF-Yv7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WnE-wL-Rnj" firstAttribute="top" secondItem="tED-hF-Yv7" secondAttribute="top" id="4Rc-DJ-0qf"/>
+                            <constraint firstItem="WnE-wL-Rnj" firstAttribute="bottom" secondItem="tED-hF-Yv7" secondAttribute="bottom" id="EOG-Jy-n9D"/>
+                            <constraint firstAttribute="trailing" secondItem="WnE-wL-Rnj" secondAttribute="trailing" id="UcB-hK-jx9"/>
+                            <constraint firstItem="WnE-wL-Rnj" firstAttribute="leading" secondItem="tED-hF-Yv7" secondAttribute="leading" id="bJi-Xn-3Jc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vmz-1o-zTW"/>
+                    <connections>
+                        <outlet property="collectionViewFS" destination="WnE-wL-Rnj" id="pmu-WD-PEM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QiO-3W-phH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842.0289855072465" y="800.54347826086962"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T1B-b9-njN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="BIP-Vi-KOY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AM9-fs-Vwe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rf5-Bc-YxW" kind="relationship" relationship="rootViewController" id="Ybo-qT-cgj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fk2-BL-9ZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="800.54347826086962"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
