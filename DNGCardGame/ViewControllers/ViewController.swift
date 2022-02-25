@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         delegate?.sitDel(situation)
         }
     override func viewDidLoad() {
-    
+    //a
         situationText.isHidden = true
         situationButtonOutlet.isHidden = true
         situation = situationsArray.randomElement()!
